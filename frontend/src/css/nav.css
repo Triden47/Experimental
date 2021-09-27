@@ -1,0 +1,21 @@
+nav {
+    padding: 30px;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav > div {
+    width: 150px;
+    text-align: center;
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+}
+
+.link:hover {
+    color: black;
+}
