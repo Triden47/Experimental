@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react'
 import '../css/nav.css'
 import { Link } from 'react-router-dom'
 import { Box, Slide } from '@mui/material'
+import ComplexButton from './ComplexButton.jsx'
+
 
 function Nav() {
     const [checked, setChecked] = useState(false);
@@ -20,19 +22,22 @@ function Nav() {
                 <Slide direction="down" in={checked} mountOnEnter unmountOnExit>
                     <nav>
                         <div>
-                            <Link className="link" to="contest/">
+                            <ComplexButton name="contests"/>
+                            {/* <Link className="link" to="contest/">
                                 Contest
-                            </Link>
+                            </Link> */}
                         </div>
                         <div>
-                            <Link className="link" to="team/">
+                            <ComplexButton name="team"/>
+                            {/* <Link className="link" to="team/">
                                 Team
-                            </Link>
+                            </Link> */}
                         </div>
                         <div>
-                            <Link className="link" to="about/">
+                            <ComplexButton name="about"/>
+                            {/* <Link className="link" to="about/">
                                 About
-                            </Link>
+                            </Link> */}
                         </div>
                     </nav>
                 </Slide>
