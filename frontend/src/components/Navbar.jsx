@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react'
-// import { Nav, Navbar, Container } from 'react-bootstrap'
 import '../css/nav.css'
-import { Link } from 'react-router-dom'
 import { Box, Slide } from '@mui/material'
 import ComplexButton from './ComplexButton.jsx'
 
@@ -23,33 +21,18 @@ function Nav() {
                     <nav>
                         <div>
                             <ComplexButton name="contests"/>
-                            {/* <Link className="link" to="contest/">
-                                Contest
-                            </Link> */}
                         </div>
                         <div>
                             <ComplexButton name="team"/>
-                            {/* <Link className="link" to="team/">
-                                Team
-                            </Link> */}
                         </div>
                         <div>
                             <ComplexButton name="about"/>
-                            {/* <Link className="link" to="about/">
-                                About
-                            </Link> */}
                         </div>
                     </nav>
                 </Slide>
             </Box>
         </Box>
   );
-    //     <nav>
-    //       <div><Link className="link" to='contest/'>Contest</Link></div>
-    //       <div><Link className="link" to="team/">Team</Link></div>
-    //       <div><Link className="link" to="about/">About</Link></div>  
-    //     </nav>
-    // )
 }
 
 export default Nav
