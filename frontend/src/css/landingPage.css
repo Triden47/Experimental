@@ -12,7 +12,7 @@
 
 svg text {
     stroke: white;
-    font-size: 150px;
+    font-size: 10rem;
     font-weight: 500;
     stroke-width: 3;
     animation: animate 3s;
