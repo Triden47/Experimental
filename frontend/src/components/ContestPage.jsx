@@ -1,7 +1,7 @@
-import { React, useEffect } from 'react'
+import React from 'react'
 import '../css/contestPage.css'
 import Navbar from './Navbar.jsx'
-import { motion, useViewportScroll, useTransform } from 'framer-motion'
+import { motion, useTransform, useViewportScroll } from 'framer-motion'
 
 export default function ContestPage() {
     const input = [0, 300, 650]
@@ -30,6 +30,9 @@ export default function ContestPage() {
                     transition={{ repeat: Infinity, duration: 10 }}
                 >Stay Tuned</motion.div>
             </div>
+            <div className="box"></div>
+            <div className="box"></div>
+            
         </div>
     )
 }

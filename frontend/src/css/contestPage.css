@@ -2,6 +2,13 @@
     overflow-x: hidden;
 }
 
+/* .box {
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    margin: 100px;
+} */
+
 .stay-tuned {
     font-family: 'Black Ops One', cursive;
     overflow: hidden;
