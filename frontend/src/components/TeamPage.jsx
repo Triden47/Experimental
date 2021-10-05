@@ -1,8 +1,8 @@
 import { React, useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { InView } from 'react-intersection-observer'
-import '../css/teamPage.css'
-import Navbar from './Navbar'
+import '../css/team/teamPage.css'
+import Navbar from './Navbar.jsx'
 import Vaibhav from '../images/team/Vaibhav.jpg'
 import PictureBook from './PictureBook.jsx'
 
@@ -66,9 +66,8 @@ export default function TeamPage() {
 
             
             <div className="wrapper">
-                {/* Below PictureVook is only for reference */}
                 <PictureBook 
-                    item="item1"
+                    item="1"
                     arr={thresholdArray}
                     title="Web-master"
                     name="Vaibhav Kumar"
@@ -79,12 +78,12 @@ export default function TeamPage() {
                 />
                 {/* To add a PictureBook element all the above props are required, in addition new item prop should be given for each and css is to be applied to each in teamPage.css */}
 
-                {/* <PictureBook
-                    item="item2"
+                <PictureBook
+                    item="2"
                     arr={thresholdArray}
                     title="President"
                     image={Vaibhav}
-                /> */}
+                />
                
 
                 

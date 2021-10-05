@@ -3,6 +3,8 @@ import { motion, useAnimation } from 'framer-motion'
 import { InView } from 'react-intersection-observer'
 import { IconButton } from "@mui/material";
 import GitHubIcon from '@mui/icons-material/GitHub';
+// import styles from '../css/team/teamPage.module.css'
+
 
 export default function PictureBook(props) {
     const control = useAnimation()
@@ -36,7 +38,7 @@ export default function PictureBook(props) {
                 const val = Math.floor(inView ? entry.intersectionRatio * 100 : 0)
                 return (
                     
-                    <div ref={ref} className={"grid-item " + props.item}>
+                    <div ref={ref} className={"grid-item item" +  props.item}>
                         <motion.h2
                             custom={val}
                             animate="visible"
@@ -64,6 +66,7 @@ export default function PictureBook(props) {
                             custom={ val }
                         >
                             <motion.img 
+                                className="members-image"
                                 src={props.image}
                                 alt={props.title}
                             />

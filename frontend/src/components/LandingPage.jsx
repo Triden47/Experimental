@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from './Navbar.jsx'
-import '../css/landingPage.css'
+import '../css/home/landingPage.css'
 import SocialSites from './SocialSites.jsx'
 import { motion } from 'framer-motion'
 
