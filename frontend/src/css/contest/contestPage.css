@@ -54,3 +54,14 @@
 /* h3 {
     display: inline;
 } */
+
+.contest-grid {
+    /* margin-top: 10%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.contest-grid > div {
+    margin: 10% auto;
+
+}

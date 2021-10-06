@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./Navbar.jsx";
 import "../css/contest/contestPage.css";
 import { useTransform, useViewportScroll } from "framer-motion";
-import Register from './Register'
+import Register from "./Register";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import CardMedia from "@mui/material/CardMedia";
@@ -12,11 +12,62 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import ShareIcon from "@mui/icons-material/Share";
 import LinkIcon from "@mui/icons-material/Link";
-import Hacker from "../images/contest/HackerRank.png"
+import Hacker from "../images/contest/HackerRank.png";
+import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
+import { styled } from "@mui/material/styles";
+import Snackbar from "@mui/material/Snackbar";
+import Stack from "@mui/material/Stack";
+import MuiAlert from "@mui/material/Alert";
 
-function NewContestCard() {
+const Alert = React.forwardRef(function Alert(props, ref) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
+
+function NewContestCard(props) {
+    const [success, setSuccess] = useState(false);
+
+    const DarkTooltip = styled(({ className, ...props }) => (
+        <Tooltip {...props} arrow classes={{ popper: className }} />
+    ))(({ theme }) => ({
+        [`& .${tooltipClasses.arrow}`]: {
+            color: theme.palette.common.black,
+        },
+        [`& .${tooltipClasses.tooltip}`]: {
+            backgroundColor: theme.palette.common.black,
+        },
+    }));
+
+    function handleSuccess() {
+        setSuccess(true);
+    }
+
+    //SnackBar
+    const [open, setOpen] = React.useState(false);
+
+    const handleClick = () => {
+        setOpen(true);
+    };
+
+    const handleClose = (event, reason) => {
+        if (reason === "clickaway") {
+            return;
+        }
+
+        setOpen(false);
+    };
+
     return (
-        <Card sx={{ maxWidth: "30%", textAlign: "center", backgroundColor: "#222831", color: "white" }}>
+        <Card
+            sx={{
+                maxWidth: "30%",
+                textAlign: "center",
+                backgroundColor: "#222831",
+                color: "white",
+                background: success
+                    ? "linear-gradient(180deg, rgba(230, 255, 0, 0.7) 0%, rgba(3, 209, 0, 0.7) 100%)"
+                    : "linear-gradient(180deg, #7700ff 0%, rgba(68, 0, 255, 0.7) 100%)",
+            }}
+        >
             <CardHeader
                 title="Announced"
                 // subheader="September 14, 2016"
@@ -30,42 +81,59 @@ function NewContestCard() {
             />
             <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                    CQM 9._
+                    {props.contestName}
                 </Typography>
-                <Typography
-                    style={{ display: "inline" }}
-                    variant="body2"
-                >
+                <Typography style={{ display: "inline" }} variant="body2">
                     Date:
                 </Typography>
-                <Typography
-                    style={{ display: "inline" }}
-                    variant="body1"
-                >
-                    "Enter date here"
+                <Typography style={{ display: "inline" }} variant="body1">
+                    {props.date}
                 </Typography>
                 <br />
-                <Typography
-                    style={{ display: "inline" }}
-                    variant="body2"
-                >
+                <Typography style={{ display: "inline" }} variant="body2">
                     Time:
                 </Typography>
-                <Typography
-                    style={{ display: "inline" }}
-                    variant="body1"
-                >
-                    "Enter time here"
+                <Typography style={{ display: "inline" }} variant="body1">
+                    {props.time}
                 </Typography>
             </CardContent>
             <CardActions style={{ justifyContent: "space-between" }}>
-                <IconButton aria-label="add to favorites">
-                    <LinkIcon sx={{ color: "white" }}/>
-                </IconButton>
-                <IconButton sx={{ marginRight: "auto" }}aria-label="share">
-                    <ShareIcon sx={{ color: "white" }}/>
-                </IconButton>
-                <Register/>
+                <DarkTooltip title="Link" arrow>
+                    <IconButton href="https://hackerrank.com" target="_blank">
+                        <LinkIcon sx={{ color: "white" }} />
+                    </IconButton>
+                </DarkTooltip>
+
+                <Stack spacing={2} sx={{ width: "100%" }}>
+                    <DarkTooltip title="Spread the word" arrow>
+                        <IconButton
+                            sx={{ marginRight: "auto" }}
+                            onClick={() => {
+                                navigator.clipboard.writeText(
+                                    "https://hackerrank.com"
+                                );
+                                handleClick();
+                            }}
+                        >
+                            <ShareIcon sx={{ color: "white" }} />
+                        </IconButton>
+                    </DarkTooltip>
+                    <Snackbar
+                        open={open}
+                        autoHideDuration={3000}
+                        onClose={handleClose}
+                    >
+                        <Alert
+                            onClose={handleClose}
+                            severity="info"
+                            sx={{ width: "100%" }}
+                        >
+                            Link Text Copied
+                        </Alert>
+                    </Snackbar>
+                </Stack>
+
+                <Register success={handleSuccess} />
             </CardActions>
         </Card>
     );
@@ -95,8 +163,15 @@ export default function ContestPage() {
                     transition={{ repeat: Infinity, duration: 10 }}
                 >Stay Tuned</motion.div>
             </div> */}
-            <NewContestCard />
-            {/* <ContestDetails /> */}
+
+            <div className="contest-grid">
+                <NewContestCard
+                    contestName="Enter contest name"
+                    date="Enter contest date"
+                    time="Enter contest time"
+                />
+                {/* <NewContestCard contestName="Enter contest name" date="Enter contest date" time="Enter contest time"/> */}
+            </div>
         </div>
     );
 }
