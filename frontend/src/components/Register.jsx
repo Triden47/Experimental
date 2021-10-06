@@ -7,17 +7,14 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import MenuItem from "@mui/material/MenuItem";
-import InputLabel from "@mui/material/InputLabel";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 export default function FormDialog() {
     const darkTheme = createTheme({
         palette: {
-          mode: 'dark',
+            mode: "dark",
         },
-      });
+    });
     const [open, setOpen] = React.useState(false);
 
     const [year, setYear] = React.useState("1");
@@ -44,69 +41,80 @@ export default function FormDialog() {
                 Register!!!
             </Button>
             <ThemeProvider theme={darkTheme}>
-            <Dialog open={open} onClose={handleClose}>
-                <DialogTitle>Register</DialogTitle>
-                <form>
-                    <DialogContent>
-                        <DialogContentText>
-                            To register for this contest fill out all the
-                            details carefully.
-                        </DialogContentText>
-                        <TextField
-                            autoFocus
-                            margin="dense"
-                            id="name"
-                            label="Full Name"
-                            type="text"
-                            fullWidth
-                            variant="standard"
-                            required
-                        />
-                        <FormControl
-                            variant="standard"
-                            sx={{ m: 0, minWidth: 125 }}
-                            required
-                        >
-                            <InputLabel>Year</InputLabel>
-                            <Select
+                <Dialog open={open} onClose={handleClose}>
+                    <DialogTitle>Register</DialogTitle>
+                    <form>
+                        <DialogContent>
+                            <DialogContentText>
+                                To register for this contest fill out all the
+                                details carefully.
+                            </DialogContentText>
+                            <TextField
+                                autoFocus
+                                margin="dense"
+                                id="name"
+                                label="Full Name"
+                                type="text"
+                                fullWidth
+                                variant="standard"
+                                required
+                            />
+                            <TextField
+                                sx={{ width: "15ch" }}
+                                autoFocus
+                                margin="dense"
                                 id="year-selector"
+                                select
+                                label="Select"
+
                                 value={year}
                                 onChange={handleChange}
-                                label="Year"
+                                variant="standard"
                             >
                                 <MenuItem value={1}>1st</MenuItem>
                                 <MenuItem value={2}>2nd</MenuItem>
                                 <MenuItem value={3}>3rd</MenuItem>
                                 <MenuItem value={4}>4th</MenuItem>
-                            </Select>
-                        </FormControl>
-                        <TextField
-                            autoFocus
-                            margin="dense"
-                            id="email"
-                            label="Email Address"
-                            type="email"
-                            fullWidth
-                            variant="standard"
-                            required
-                        />
-                        <TextField
-                            autoFocus
-                            margin="dense"
-                            id="hacker-id"
-                            label="HackerRank ID"
-                            type="text"
-                            fullWidth
-                            variant="standard"
-                            required
-                        />
-                    </DialogContent>
-                    <DialogActions>
-                        <Button onClick={handleClose}>Cancel</Button>
-                        <Button type="submit">Submit</Button>
-                    </DialogActions>
-                </form>
-            </Dialog>
+                            </TextField>
+
+                            <TextField
+                                sx={{ ml: 10 }}
+                                autoFocus
+                                margin="dense"
+                                id="roll"
+                                label="Roll Number"
+                                type="text"
+                                variant="standard"
+                                required
+                            />
+
+                            <TextField
+                                autoFocus
+                                margin="dense"
+                                id="email"
+                                label="Email Address"
+                                type="email"
+                                fullWidth
+                                variant="standard"
+                                required
+                            />
+                            <TextField
+                                autoFocus
+                                margin="dense"
+                                id="hacker-id"
+                                label="HackerRank ID"
+                                type="text"
+                                fullWidth
+                                variant="standard"
+                                required
+                            />
+                        </DialogContent>
+                        <DialogActions>
+                            <Button onClick={handleClose}>Cancel</Button>
+                            <Button type="submit">Submit</Button>
+                        </DialogActions>
+                    </form>
+                </Dialog>
             </ThemeProvider>
         </div>
     );
