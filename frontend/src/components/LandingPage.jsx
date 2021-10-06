@@ -1,20 +1,26 @@
 import React from 'react'
 import Navbar from './Navbar.jsx'
-import '../css/landingPage.css'
+import '../css/home/landingPage.css'
+import SocialSites from './SocialSites.jsx'
+import { motion } from 'framer-motion'
 
-
-function LandingPage() {
+export default function LandingPage() {
     return (
         <div>
             <div className="background-img"></div>
             <Navbar/>
-            <svg viewBox="0 0 1400 600">
-                <text x="50%" y="50%" fill="transparent" text-anchor="middle">
+            <motion.svg viewBox="0 0 1400 400"
+                animate={{
+                    y: [-100, 0],
+                    opacity: [0, 1]
+                }}
+                transition={{ duration: 3 }}
+            >
+                <text x="50%" y="80%" fill="transparent" text-anchor="middle">
                 ACM
                 </text>
-            </svg>
+            </motion.svg>
+            <SocialSites/>
         </div>
     )
 }
-
-export default LandingPage
