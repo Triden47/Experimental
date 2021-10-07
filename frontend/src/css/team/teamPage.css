@@ -1,29 +1,37 @@
 .team {
     font-family: 'Black Ops One', cursive;
-    overflow: hidden;
-    position: absolute;
-    width: 100%;
-    height: 70%;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 15%;
+    
 }
 
-.team div {
-    /* padding: 100px; */
-    width: 150px;
-    text-align: center;
+.team1 {
+    flex: 4;
+    text-align: end;
+    font-size: 2rem;
+}
+
+.team1 p {
+    margin: 0;
+    padding: 0;
+}
+
+.team2 {
+    flex: 5;
+    font-size: 6rem;
 }
 
 .wrapper {
     margin: 10%;
-    margin-top: 50%;
+
     display: grid;
     max-width: 100%;
 
     grid-template-columns: 45% 45%;
     grid-gap: 10%;
-    /* overflow-x: hidden; */
+
 }
 
 .grid-item h2 {
