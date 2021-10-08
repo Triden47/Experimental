@@ -11,7 +11,7 @@ function Nav() {
         setChecked((prev) => !prev);
     };
     useEffect(() => {
-        setTimeout(handleChange, 3000);
+        setTimeout(handleChange, 1000);
     }, []);
 
     return (

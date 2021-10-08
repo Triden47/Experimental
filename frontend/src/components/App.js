@@ -1,5 +1,4 @@
 import React from "react";
-// import '../css/App.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ContestPage from "./ContestPage";
 import LandingPage from "./LandingPage";

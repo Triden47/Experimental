@@ -3,14 +3,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 15%;
+    /* padding: 15%; */
+    height: 500px;
     
 }
 
 .team1 {
+    /* mix-blend-mode: difference; */
     flex: 4;
     text-align: end;
     font-size: 2rem;
+    /* padding: 15%;
+    padding-right: 0; */
 }
 
 .team1 p {
@@ -21,6 +25,8 @@
 .team2 {
     flex: 5;
     font-size: 6rem;
+    /* padding: 15%;
+    padding-left: 0; */
 }
 
 .wrapper {
@@ -50,7 +56,7 @@
     grid-row: 4 / span 5;
 }
 
-.item3 {
+/* .item3 {
     grid-column: 1;
     grid-row: 8 / span 5;
 }
@@ -58,7 +64,7 @@
 .item4 {
     grid-column: 2;
     grid-row: 12 / span 5;
-}
+} */
 
 .members-image {
     max-width:100%;

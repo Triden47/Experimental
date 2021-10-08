@@ -33,31 +33,32 @@ export default function TeamPage() {
                         <motion.div
                             ref={ref}
                             className="team"
-                            animate={{
-                                y: (100 - val) * 1.5,
-                                opacity: val / 50 - 1,
-                            }}
-                            transition={{
-                                type: "tween",
-                                duration: "0.001",
-                            }}
                         >
                             <motion.div
                                 className="team1"
+                                animate={{
+                                    y: (100 - val) * 1.5,
+                                    opacity: val / 50 - 1,
+                                }}
+                                transition={{
+                                    type: "tween",
+                                    duration: 0,
+                                    // ease: "anticipate"
+                                }}
                             >
                                 <p>Meet the</p>
                                 <p style={{ paddingRight: "5%" }}>team</p>
                             </motion.div>
                             <motion.div 
                                 className="team2"
-                                // animate={{
-                                //     y: (100 - val) * 1.5,
-                                //     opacity: val / 50 - 1,
-                                // }}
-                                // transition={{
-                                //     type: "tween",
-                                //     duration: "0.001",
-                                // }}
+                                animate={{
+                                    y: (100 - val) * 1.5,
+                                    opacity: val / 50 - 1,
+                                }}
+                                transition={{
+                                    type: "tween",
+                                    duration: 0,
+                                }}
                             >
                                 {year}
                             </motion.div>

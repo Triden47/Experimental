@@ -27,7 +27,7 @@ function SimpleZoom() {
       >
         <Zoom
           in={checked}
-          style={{ transitionDelay: checked ? "3500ms" : "0ms" }}
+          style={{ transitionDelay: checked ? "1750ms" : "0ms" }}
         >
             <IconButton style={{"color": "white"}} href="https://linkedin.com" target="_blank">
                 <LinkedInIcon />
@@ -35,7 +35,7 @@ function SimpleZoom() {
         </Zoom>
         <Zoom
           in={checked}
-          style={{ transitionDelay: checked ? "3500ms" : "0ms" }}
+          style={{ transitionDelay: checked ? "1750ms" : "0ms" }}
         >
             <IconButton style={{"color": "white"}} href="https://instagram.com" target="_blank">
                 <InstagramIcon />
@@ -43,7 +43,7 @@ function SimpleZoom() {
         </Zoom>
         <Zoom
           in={checked}
-          style={{ transitionDelay: checked ? "3500ms" : "0ms" }}
+          style={{ transitionDelay: checked ? "1750ms" : "0ms" }}
         >
             <IconButton style={{"color": "white"}} href="https://github.com" target="_blank">
                 <GitHubIcon />

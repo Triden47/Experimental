@@ -3,8 +3,6 @@ import { motion, useAnimation } from 'framer-motion'
 import { InView } from 'react-intersection-observer'
 import { IconButton } from "@mui/material";
 import GitHubIcon from '@mui/icons-material/GitHub';
-// import styles from '../css/team/teamPage.module.css'
-
 
 export default function PictureBook(props) {
     const control = useAnimation()
@@ -15,7 +13,8 @@ export default function PictureBook(props) {
             opacity: val / 100,
             transition: {
                 type: "tween",
-                duration: 0.0001
+                // duration: 0,
+                ease: "easeOut"
             }
         }),
         hidden: {
